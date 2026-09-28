@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090d16;
+  --foreground: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 3px;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400;
+  }
+  .glass-card {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300;
+  }
+  .section-label {
+    @apply mb-3 text-xs font-bold uppercase tracking-[0.2em] text-emerald-400;
+  }
+  .section-title {
+    @apply text-3xl font-extrabold leading-tight text-white sm:text-4xl;
+  }
+  .section-lead {
+    @apply mt-5 text-base leading-7 text-slate-400;
+  }
+  .detail-label {
+    @apply mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-emerald-400;
+  }
+  .detail-copy {
+    @apply text-sm leading-6 text-slate-300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
